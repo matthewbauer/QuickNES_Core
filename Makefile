@@ -203,6 +203,10 @@ else ifneq (,$(findstring armv,$(platform)))
 	endif
 	PLATFORM_DEFINES += -DARM
 
+# emscripten
+else ifneq (,$(findstring emscripten,$(platform)))
+	TARGET := $(TARGET_NAME)_libretro.bc
+
 # Windows
 else
 	TARGET := $(TARGET_NAME)_libretro.dll
